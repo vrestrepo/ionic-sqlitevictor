@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Agenda Telefonica
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+  <ion-item>
+    <ion-label color="primary">Nombre</ion-label>
+    <ion-input placeholder="Text Input" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+ <ion-item>
+    <ion-label color="primary">Telefono</ion-label>
+    <ion-input placeholder="Text Input" [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+  <ion-item>
+      <button ion-button (click)="insertar(nombre,telefono)">Guardar</button>
+    </ion-item>
+</ion-list>
+<ion-list>
+    <ion-item *ngFor="let persona of personas">{{persona.toString()}}</ion-item>
+</ion-list>
 </ion-content>
